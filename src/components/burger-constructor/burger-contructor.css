@@ -1,0 +1,45 @@
+.constructorContainer{
+    width: 600px;
+    height: 912px;
+    left: 340px;
+    top: 88px;
+    
+    /* interface/bg */
+    
+    background: #131316;
+    }
+
+.burgerContainer{
+    width: 568px;
+    height: 80px;
+}
+
+.priceOrderContainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.priceIconContainer{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ingredientIconContainer{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.orderContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.scrollBar{
+    height: 656px;
+    overflow-y: auto;
+}
