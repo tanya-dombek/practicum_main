@@ -7,8 +7,8 @@ import OrderDetails from './order-details'
  
 function ComponentsInfo () {
     const [isOpen, setIsOpen] = useState(false);
-    const onCloseModal = () => {
-        setIsOpen(false);
+    const toggleModal = () => {
+        setIsOpen(!isOpen);
       };
       const orderNumber = 34536;
 
@@ -18,10 +18,10 @@ function ComponentsInfo () {
                 <p className="text text_type_digits-medium">610</p>
                 <CurrencyIcon type="primary" />
             </div>
-            <Button htmlType="button" type="primary" size="medium" onClick={()=> setIsOpen(true)}>
+            <Button htmlType="button" type="primary" size="medium" onClick={toggleModal}>
                 Оформить заказ
             </Button>
-            {isOpen && <Modal open = {isOpen} onClose={onCloseModal} title=''>
+            {isOpen && <Modal open = {isOpen} onClose={toggleModal} title=''>
                 <OrderDetails orderNumber={orderNumber}/>
             </Modal>}
         </div>

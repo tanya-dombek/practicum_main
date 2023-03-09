@@ -9,8 +9,8 @@ function IngredientsComponent ({ingredientData}) {
     const ingredient = ingredientData[0];
     const [isOpen, setIsOpen] = useState(false);
 
-    const onCloseModal = () => {
-        setIsOpen(false);
+    const toggleModal = () => {
+        setIsOpen(!isOpen);
       };
 
       const addIcon =
@@ -20,7 +20,7 @@ function IngredientsComponent ({ingredientData}) {
       console.log(isOpen);
 
     return ( 
-        <div className='ingredientContainerStyle' onClick={()=> setIsOpen(true)}>
+        <div className='ingredientContainerStyle' onClick={toggleModal}>
             {addIcon}
             <img srcSet={ingredient.image_large} className='imgChanges' alt='ingredient'/>
             <div className='ingredientStyle'>
@@ -28,7 +28,7 @@ function IngredientsComponent ({ingredientData}) {
                 <CurrencyIcon type="primary" />
             </div>
             <p className="text text_type_main-default textAlign">{ingredient.name}</p>
-            {isOpen && <Modal onClose={onCloseModal} title='Детали ингредиента'>
+            {isOpen && <Modal onClose={toggleModal} title='Детали ингредиента'>
                 <IngredientDetails ingredientInfo={ingredient}/>
             </Modal>}
         </div>
